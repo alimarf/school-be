@@ -11,7 +11,7 @@ import { SchoolService } from './school.service';
 import { CreateSchoolDto } from './dto/create-school.dto';
 import { UpdateSchoolDto } from './dto/update-school.dto';
 
-@Controller('school')
+@Controller('schools')
 export class SchoolController {
   constructor(private readonly schoolService: SchoolService) {}
 

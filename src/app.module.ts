@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { SchoolModule } from './school/school.module';
 import { SupabaseModule } from './supabase/supabase.module';
+import { SeedersModule } from './seeders/seeders.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { SupabaseModule } from './supabase/supabase.module';
     UsersModule,
     SchoolModule,
     SupabaseModule,
+    SeedersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
