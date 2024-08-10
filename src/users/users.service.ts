@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from './user.entity';
+import { User } from './entities/user.entity';
 import { plainToInstance } from 'class-transformer';
-import { UserDto } from './user.dto';
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
@@ -25,15 +25,4 @@ export class UsersService {
     const users = await this.usersRepository.find();
     return plainToInstance(UserDto, users, { excludeExtraneousValues: true });
   }
-
-  // async createUser(email: string, password: string) {
-  //   const supabase = this.supabaseService.getClient();
-  //   const { data, error } = await supabase.auth.signUp({ email, password });
-
-  //   if (error) {
-  //     throw new Error(`Supabase sign-up error: ${error.message}`);
-  //   }
-
-  //   return data;
-  // }
 }
